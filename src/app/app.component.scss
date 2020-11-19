@@ -1,0 +1,25 @@
+$black: #2B2A2C;
+$gray: #6A696B;
+$gray-light: #8D8D8E;
+$white: #fff;
+//body{
+//  &.noScroll{
+//    overflow: hidden;
+//  }
+//}
+html {
+  font-size: 15px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: $black
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}

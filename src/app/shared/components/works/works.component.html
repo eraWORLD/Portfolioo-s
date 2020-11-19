@@ -1,0 +1,29 @@
+<div class="works">
+  <div class="container">
+    <div class="works__nav">
+      <a href="#" type="button"  class="works__nav-link" (click)="searchAll($event)" >All</a>
+      <a href="#" class="works__nav-link" (click)="searchApp($event)" >App</a>
+      <a href="#" class="works__nav-link" (click)="searchWebsites($event)">Websites</a>
+      <a href="#" class="works__nav-link" (click)="searchInteraction($event)">Interaction</a>
+    </div>
+
+    <div class="portfolio">
+      <div class="portfolio__col" *ngFor="let post of posts | SearchPosts:searchCat">
+        <div class="work">
+          <img class="work__image" src="{{post.img}}" alt="">
+          <div class="work-content">
+            <div class="work__cat">{{post.cat}}</div>
+            <div class="work__title">
+              {{post.title}}
+              <div class="work__date" datetime = "2020-11-11 20:00">{{post.date | date: 'YYYY'}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="text-center">
+      <button class="btn btn--sm">Load more work</button>
+    </div>
+  </div>
+</div>

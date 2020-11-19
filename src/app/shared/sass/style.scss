@@ -1,0 +1,31 @@
+$black: #2B2A2C;
+$gray: #6A696B;
+$gray-light: #8D8D8E;
+$white: #fff;
+
+
+
+html {
+  font-size: 15px;
+
+}
+
+h1,h2,h3,h4,h5,h6 {margin: 0;}
+p{
+  margin: 0 0 1rem;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: 0 auto;
+}
+
