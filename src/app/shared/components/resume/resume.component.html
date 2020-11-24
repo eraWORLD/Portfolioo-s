@@ -1,7 +1,7 @@
 
-
-<div class="modal">
-  <div class="modal__dialog">
+<div id="print-section">
+<div class="modal" (click)="clouseResume()">
+  <div class="modal__dialog" (click)="stopPropagation($event)">
 
     <button class="modal__close" type="button" (click)="clouseResume()">
       <img class="modal__close-img" src="../../../../assets/image/modal-close.svg" alt="">
@@ -9,10 +9,11 @@
 
     <div class="modal__content">
       <h3 class="modal__title text-center">RESUME</h3>
-
       <div class="text-center">
-        <a class="btn btn--thin" href="#">DOWNLOAD PDF</a>
-        <a class="btn btn--thin" href="#">PRINT</a>
+        <a class="btn btn--thin" href='../../assets/resume_46122794.pdf' download>DOWNLOAD PDF</a>
+<!--        <a class="btn btn&#45;&#45;thin" href="#">PRINT</a>-->
+        <button class="btn btn--thin" printSectionId="print-section" [useExistingCss]="true" ngxPrint>Print</button>
+
       </div>
 
       <div class="timeline">
@@ -113,10 +114,11 @@
       </div>
 
       <div class="text-center">
-        <a class="btn" href="#">Hire me</a>
+        <a class="btn" href="#" (click)="hereMe($event)">Hire me</a>
       </div>
     </div>
   </div>
 
 </div>
 
+</div>

@@ -5,14 +5,36 @@
 @import "../../sass/btn";
 
 
+.photo{
 
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 47%;
+  right: 0;
+  overflow: hidden;
+  @include screen('md') {
+    left: 60%;
+  }
+  @include screen('sm') {
+  display: none;
+  }
 
+}
 .contact{
   display: flex;
-  background: url("https://via.placeholder.com/480x700/") right center no-repeat;
+  position: relative;
+  //background: url("") right center no-repeat;
   .contact__left{
     width: 47%;
     padding: 2rem;
+    @include screen('md') {
+      width: 60%;
+    }
+    @include screen('sm') {
+      width: 100%;
+      margin: 0 auto;
+    }
 
   }
 }
@@ -85,3 +107,20 @@
 }
 
 
+.form__group {
+  display: block;
+  color: #888;
+  margin-bottom: .8rem;
+
+  &.invalid {
+    color: red;
+    input,textarea {
+      border-color: red;
+    }
+  }
+
+  .validation {
+    color: red;
+  }
+
+}

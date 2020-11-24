@@ -1,9 +1,40 @@
 @import "../../sass/style";
 @import "../../sass/btn";
+@import "src/assets/styles/media";
+
+::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+::-webkit-scrollbar
+{
+  width: 12px;
+  background-color: #F5F5F5;
+}
+::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #555;
+}
+
+
+
 
 .news{
   margin-top: 14rem;
   margin-bottom: 8rem;
+  @include  screen('lg'){
+    margin: 12rem auto 5rem;
+
+  }
+  //@include  screen('sx'){
+  //  margin:0 auto;
+  //  width:
+  //
+  //}
   .news__header{
     margin-bottom: 3.6rem;
     text-align: center;
@@ -14,6 +45,10 @@
       color: $black;
       font-weight: 700;
       text-transform: uppercase;
+      @include  screen('md'){
+        font-size: 2rem;
+
+      }
     }
     .news__text{
       font-size: 1.2rem;
@@ -33,13 +68,25 @@
   .articles__col{
     width: 33.333%;
     padding: 1rem;
+    @include screen('md'){
+      width: 100%;
+    }
 
     .articles__item{
       margin-bottom: 2rem;
+      @include screen('md'){
+        width: 300px;
+        margin: 0 auto 2rem;
+      }  @include screen('sx'){
+        //min-width: 300px;
+        margin: 0 auto 2rem;
+      }
 
       .articles__header{
         position: relative;
         margin-bottom: 1.35rem;
+        max-height: 180px;
+        overflow: hidden;
 
         .articles__date{
           display: flex;
@@ -63,10 +110,13 @@
           display: block;
           max-width: 100%;
           height: auto;
+
         }
       }
       .articles__content{
         margin-bottom: 2rem;
+        max-height: 200px;
+        overflow: auto;
         .articles__title{
           margin-bottom: .6rem;
 

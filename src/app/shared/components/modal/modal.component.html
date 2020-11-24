@@ -1,11 +1,23 @@
-<div class="modal">
-  <div class="modal__dialog">
-    <button class="modal__close" type="button">
+<div class="modal" (click)="closeModal()">
+  <div class="modal__dialog" (click)="stopPropagation($event)">
+    <button class="modal__close" type="button" (click)="closeModal()">
       <img class="modal__close-img" src="../../../../assets/image/modal-close.svg" alt="">
     </button>
     <div class="modal-work">
       <div class="modal-work__previous">
-        <img class="modal-work__photo" src="https://via.placeholder.com/790x780/" alt="">
+        <div id="worksSlider">
+          <carousel class="carousel" #myCarousel="carousel"
+            [images]="images"
+                    [height]="800"
+                    [width]="780"
+                    [cellWidth]="'100%'"
+                    [dots]="true"
+                    [transitionTimingFunction] ="'ease-in'"
+                    [arrows] = "false"
+          >
+
+          </carousel>
+        </div>
       </div>
       <div class="modal-work__content">
         <div class="modal-work__header">
@@ -22,11 +34,12 @@
         </div>
 
         <div class="modal-work__footer">
-          <button class="modal-work__btn modal-work__btn-prev"><img src="../../../../assets/image/back.svg" height="12" alt=""> Previous</button>
-          <button class="modal-work__btn modal-work__btn-next">Next <img src="../../../../assets/image/next.svg" height="12" alt=""> </button>
+          <button class="modal-work__btn modal-work__btn-prev" (click)="prev()"><img src="../../../../assets/image/back.svg" height="12" alt=""> Previous</button>
+          <button class="modal-work__btn modal-work__btn-next" (click)="next()"> >Next <img src="../../../../assets/image/next.svg" height="12" alt=""></button>
         </div>
       </div>
 
     </div>
   </div>
 </div>
+

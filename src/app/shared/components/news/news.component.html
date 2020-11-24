@@ -7,76 +7,36 @@
 
     <div class="articles">
 
-      <div class="articles__col">
+      <div id="style-1" class="articles__col" *ngFor="let news of postNews">
 
         <div class="articles__item">
           <div class="articles__header">
-            <time class="articles__date">10 <br> june</time>
-            <a href="#">
-            <img alt="" class="articles__photo" src="https://via.placeholder.com/370x257"/>
+            <time class="articles__date">{{news.date}}</time>
+            <a href="{{news.link}}">
+            <img alt="" class="articles__photo" src="{{news.img}}"/>
             </a>
           </div>
 
           <div class="articles__content">
             <h4 class="articles__title">
-              <a href="#">EN THE BEST APP IN 2017</a>
+              <a href="{{news.img}}">{{news.title}}</a>
             </h4>
-            <div class="articles__cat">CATEGORY</div>
+            <div class="articles__cat">{{news.category}}</div>
             <div class="articles__text">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque eu enim eget luctus. Sed augue felis, facilisis et elementum vitae, aliquam sit amet ante. Sed iaculis eros sem, elementum consequat</p>
+              <p>{{news.text}}</p>
             </div>
           </div>
 
-          <a class="btn btn--sm">read more</a>
+          <a href="{{news.img}}" class="btn btn--sm">read more</a>
         </div>
 
       </div>
-      <div class="articles__col"> <div class="articles__item">
-        <div class="articles__header">
-          <time class="articles__date">10 <br> june</time>
-          <a href="#">
-            <img alt="" class="articles__photo" src="https://via.placeholder.com/370x257"/>
-          </a>
-        </div>
 
-        <div class="articles__content">
-          <h4 class="articles__title">
-            <a href="#">EN THE BEST APP IN 2020</a>
-          </h4>
-          <div class="articles__cat">CATEGORY</div>
-          <div class="articles__text">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque eu enim eget luctus. Sed augue felis, facilisis et elementum vitae, aliquam sit amet ante. Sed iaculis eros sem, elementum consequat</p>
-          </div>
-        </div>
 
-        <a class="btn btn--sm">read more</a>
-      </div>
-      </div>
-      <div class="articles__col"> <div class="articles__item">
-        <div class="articles__header">
-          <time class="articles__date">10 <br> june</time>
-          <a href="#">
-            <img class="articles__photo" src="https://via.placeholder.com/370x257" alt=""/>
-          </a>
-        </div>
-
-        <div class="articles__content">
-          <h4 class="articles__title">
-            <a href="#">EN THE BEST APP IN 2017</a>
-          </h4>
-          <div class="articles__cat">CATEGORY</div>
-          <div class="articles__text">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque eu enim eget luctus. Sed augue felis, facilisis et elementum vitae, aliquam sit amet ante. Sed iaculis eros sem, elementum consequat</p>
-          </div>
-        </div>
-
-        <a class="btn btn--sm">read more</a>
-      </div>
-      </div>
     </div>
 
     <div class="news__footer">
-      <a href="" class="news__link">See more posts</a>
+      <a href="https://news.google.com/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRGRqTVhZU0FtVnVHZ0pWVXlnQVAB?hl=en-US&gl=US&ceid=US%3Aen" class="news__link">See more posts</a>
     </div>
   </div>
 

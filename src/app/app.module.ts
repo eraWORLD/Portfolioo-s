@@ -14,6 +14,12 @@ import { ModalComponent } from './shared/components/modal/modal.component';
 import { ResumeComponent } from './shared/components/resume/resume.component';
 import { TalkComponent } from './shared/components/talk/talk.component';
 import {SearchPipe} from "./shared/search.pipe";
+import {CarouselModule} from "./shared/modal.module";
+import {NgxExtendedPdfViewerModule} from "ngx-extended-pdf-viewer";
+import {NgxPrintModule} from "ngx-print";
+import {ReactiveFormsModule} from "@angular/forms";
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -31,10 +37,17 @@ import {SearchPipe} from "./shared/search.pipe";
     TalkComponent,
     SearchPipe,
     SearchPipe,
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CarouselModule,
+    NgxExtendedPdfViewerModule,
+    NgxPrintModule,
+    ReactiveFormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
 
 
   ],

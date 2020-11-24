@@ -1,11 +1,11 @@
- <!--HEADER-->
+<!--HEADER-->
 <header class="header">
   <div class="container">
     <div class="header__inner">
 
       <div class="user">
         <div class="user__avatar">
-          <img src="https://placehold.it/57/333" alt="">
+          <a href="https://www.instagram.com/v_zelemskiy/?hl=ru"><img height="57px" src="https://instagram.fiev4-1.fna.fbcdn.net/v/t51.2885-19/s150x150/62256738_342260873132367_7662803216110714880_n.jpg?_nc_ht=instagram.fiev4-1.fna.fbcdn.net&_nc_ohc=DcZqOuhNNaIAX_u9E8V&tp=1&oh=91d7d0334b283f25a348f0e5f4b72b54&oe=5FE45698" alt=""></a>
         </div>
         <div class="user__content">
           <div class="user__name">
@@ -15,12 +15,15 @@
         </div>
       </div>
 
-      <nav class="nav">
-        <a class="nav__link" href="#">work</a>
-        <a class="nav__link" href="#">about me</a>
-        <a class="nav__link" href="#">blog</a>
+      <nav class="nav" [class.show]="navBool">
+        <a href="#idWork" class="nav__link" (click)="Event($event)">work</a>
+        <a href="#idAbout" class="nav__link" (click)="EventA($event)">about me</a>
+        <a class="nav__link" href="https://angular-blog-f56ba.web.app/">blog</a>
         <a class="nav__link nav__link--btn" href="#" (click)="hereMe($event)">hire me</a>
       </nav>
+      <button type="button" class="burger" (click)="openNav()">
+        <img class="burger_icon" src="../../assets/image/menu.svg" alt="">
+      </button>
     </div>
   </div>
 </header>
@@ -37,24 +40,24 @@
         <div class="intro__text">Web Developer &amp; UX Designer</div>
 
         <div class="social">
-          <a href="" class="social__link">
+          <a href="https://www.facebook.com/" class="social__link">
             <img src="../../../../assets/image/Fb.png" alt="">
           </a>
-          <a href="" class="social__link">
+          <a href="https://www.linkedin.com/" class="social__link">
             <img src="../../../../assets/image/In.png" alt="">
           </a>
-          <a href="" class="social__link">
+          <a href="https://www.instagram.com/?hl=ru" class="social__link">
             <img src="../../../../assets/image/Instagram.png" alt="">
           </a>
-          <a href="" class="social__link">
+          <a href="https://twitter.com/?lang=ru" class="social__link">
             <img src="../../../../assets/image/Twitter.png" alt="">
           </a>
 
-          <a href="" class="social__link">
+          <a href="https://www.behance.net/" class="social__link">
             <img src="../../../../assets/image/Be.png" alt="">
           </a>
 
-          <a href="" class="social__link">
+          <a href="https://dribbble.com/" class="social__link">
             <img src="../../../../assets/image/Dribbble.png" alt="">
           </a>
 
@@ -66,13 +69,13 @@
     </div>
   </div>
 </div>
-
+<!--               <router-outlet></router-outlet>-->
 <!-- //Works-->
- <section >
-   <app-works></app-works>
+ <section>
+   <app-works id="idWork"></app-works>
  </section>
 
- <section >
+ <section id="idAbout" >
    <app-about-me></app-about-me>
  </section>
 
@@ -84,13 +87,44 @@
    <app-news></app-news>
  </section>
 
- <section>
-   <app-footer></app-footer>
- </section>
+<!-- <section>-->
+<!--   <app-footer></app-footer>-->
+<!-- </section>-->
 
-<!--<section id="modal_project">-->
-<!--  <app-modal></app-modal>-->
-<!--</section>-->
+<!--Bottom-->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__credits">
+        <div class="footer__copyright">
+          &copy; 2020 UI43 - Free Templates
+        </div>
+        <div class="footer__social">
+          <a href="https://www.behance.net/" target="_blank"><img src="../../../../assets/image/behance-gray.svg" alt="" width="24px"></a>
+          <a href="https://dribbble.com/" target="_blank"><img src="../../../../assets/image/dribbble-gray.svg" alt="" width="18px"></a>
+          <a href="https://www.linkedin.com/" target="_blank"><img src="../../../../assets/image/linkedin-gray.svg" alt="" width="18px"></a>
+          <a href="https://www.facebook.com/" target="_blank"><img src="../../../../assets/image/fb-gray.svg" alt="" height="18px"></a>
+          <a href="https://www.instagram.com/?hl=ru" target="_blank"><img src="../../../../assets/image/instagram-gray.svg" alt="" width="18px"></a>
+          <a href="https://twitter.com/?lang=ru" target="_blank"><img src="../../../../assets/image/twitter-gray.svg" alt="" width="20px"></a>
+        </div>
+      </div>
+
+      <div class="footer__nav">
+        <a href="#idWork" class="footer__nav-link" (click)="Event($event)">Work</a>
+        <a href="#idAbout" class="footer__nav-link" (click)="EventA($event)">About me</a>
+        <a href="" class="footer__nav-link">Blog</a>
+        <a class="footer__nav-link">Contact</a>
+        <a href="https://angular-blog-f56ba.web.app/" class="footer__nav-link footer__nav-link--btn" (click)="hereMe($event)">Hire me</a>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+<!--/////////////////-->
+<section id="modal_project" *ngIf="openWorkBool">
+  <app-modal></app-modal>
+</section>
 <section id="modal_resume" *ngIf="boolResume" >
   <app-resume></app-resume>
 </section>

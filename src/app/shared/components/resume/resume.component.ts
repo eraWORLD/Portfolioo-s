@@ -8,12 +8,19 @@ import {MainLayoutComponent} from "../main-layout/main-layout.component";
 })
 export class ResumeComponent implements OnInit {
 
-  constructor( private mainLayoutComponent: MainLayoutComponent) { }
+  constructor(private mainLayoutComponent: MainLayoutComponent) { }
 
   ngOnInit(): void {
   }
 
   clouseResume() {
     this.mainLayoutComponent.clouseResume();
+  }
+  stopPropagation($event){
+    $event.stopPropagation()
+  }
+
+  hereMe($event: MouseEvent) {
+      this.mainLayoutComponent.hereMe($event)
   }
 }

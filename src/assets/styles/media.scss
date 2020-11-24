@@ -1,0 +1,16 @@
+
+$breakpoints: ("xs":390px, "sm":576px, "md":770px, "lg":992px, "xl":1199px);
+
+
+
+@mixin screen($breakpoint){
+  @if map-has-key($breakpoints,$breakpoint) {
+    @media (max-width: map-get($breakpoints, $breakpoint)) {
+      @content
+    }
+  }
+  @else {
+    @warn "Unfortunately, `#{$breakpoint}` can not be found"
+    +"Available breackpoints are: `#{map-keys($breakpoints)}"
+  }
+}

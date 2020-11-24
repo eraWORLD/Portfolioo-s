@@ -6,11 +6,10 @@
       <a href="#" class="works__nav-link" (click)="searchWebsites($event)">Websites</a>
       <a href="#" class="works__nav-link" (click)="searchInteraction($event)">Interaction</a>
     </div>
-
-    <div class="portfolio">
-      <div class="portfolio__col" *ngFor="let post of posts | SearchPosts:searchCat">
+    <div class="portfolio" [ngClass]="{Mhith: hBool}" >
+      <div class="portfolio__col" *ngFor="let post of posts | SearchPosts:searchCat" (click)="openWork($event)">
         <div class="work">
-          <img class="work__image" src="{{post.img}}" alt="">
+          <img  class="work__image" src="{{post.img}}" alt="">
           <div class="work-content">
             <div class="work__cat">{{post.cat}}</div>
             <div class="work__title">
@@ -23,7 +22,7 @@
 
     </div>
     <div class="text-center">
-      <button class="btn btn--sm">Load more work</button>
+      <button class="btn btn--sm" (click)="this.hBool = !this.hBool">Load more work</button>
     </div>
   </div>
 </div>
