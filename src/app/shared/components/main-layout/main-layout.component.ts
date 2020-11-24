@@ -44,19 +44,19 @@ export class MainLayoutComponent {
 
   Event($event: MouseEvent) {
     $event.preventDefault()
-    document.getElementById('idWork').scrollIntoView({behavior:"smooth",block:"start"})
+    document.getElementById('top').scrollIntoView({behavior:"smooth",block:"start"})
 
   }
-  EventA($event: MouseEvent) {
-    $event.preventDefault()
-    document.getElementById('idAbout').scrollIntoView({behavior:"smooth",block:"start"})
-
-  }
-  EventB($event: MouseEvent) {
-    $event.preventDefault()
-    document.getElementById('idWork').scrollIntoView({behavior:"smooth",block:"start"})
-
-  }
+  // EventA($event: MouseEvent) {
+  //   $event.preventDefault()
+  //   document.getElementById('idAbout').scrollIntoView({behavior:"smooth",block:"start"})
+  //
+  // }
+  // EventB($event: MouseEvent) {
+  //   $event.preventDefault()
+  //   document.getElementById('idWork').scrollIntoView({behavior:"smooth",block:"start"})
+  //
+  // }
 
 
 }

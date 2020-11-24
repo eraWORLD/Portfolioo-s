@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MainLayoutComponent} from "../main-layout/main-layout.component";
 
 @Component({
   selector: 'app-intro',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IntroComponent implements OnInit {
 
-  constructor() { }
+  constructor( public mainLayout: MainLayoutComponent) { }
 
   ngOnInit(): void {
   }
 
+  hereMe($event: MouseEvent) {
+    this.mainLayout.hereMe($event)
+  }
+
+  resume() {
+    this.mainLayout.resume()
+  }
 }
