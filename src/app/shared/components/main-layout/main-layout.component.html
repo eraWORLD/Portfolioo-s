@@ -5,7 +5,9 @@
 
       <div class="user">
         <div class="user__avatar">
-          <a href="https://www.instagram.com/v_zelemskiy/?hl=ru"><img height="57px" src="https://instagram.fiev4-1.fna.fbcdn.net/v/t51.2885-19/s150x150/62256738_342260873132367_7662803216110714880_n.jpg?_nc_ht=instagram.fiev4-1.fna.fbcdn.net&_nc_ohc=DcZqOuhNNaIAX_u9E8V&tp=1&oh=91d7d0334b283f25a348f0e5f4b72b54&oe=5FE45698" alt=""></a>
+          <a href="https://www.instagram.com/v_zelemskiy/?hl=ru">
+            <img height="57px" src="https://instagram.fiev4-1.fna.fbcdn.net/v/t51.2885-19/s150x150/62256738_342260873132367_7662803216110714880_n.jpg?_nc_ht=instagram.fiev4-1.fna.fbcdn.net&_nc_ohc=DcZqOuhNNaIAX_u9E8V&tp=1&oh=91d7d0334b283f25a348f0e5f4b72b54&oe=5FE45698" alt="">
+          </a>
         </div>
         <div class="user__content">
           <div class="user__name">
@@ -16,9 +18,9 @@
       </div>
 
       <nav class="nav" [class.show]="navBool">
-        <a class="nav__link" routerLink="/">home</a>
-        <a class="nav__link" routerLink="work" >work</a>
-        <a class="nav__link" routerLink="aboutMe" >about me</a>
+        <a class="nav__link" routerLink="/" (click)="openNav()">home</a>
+        <a class="nav__link" routerLink="work" (click)="openNav()">work</a>
+        <a class="nav__link" routerLink="aboutMe" (click)="openNav()">about me</a>
 <!--        <a class="nav__link" href="https://angular-blog-f56ba.web.app/">blog</a>-->
 
         <a class="nav__link nav__link--btn" href="#" (click)="hereMe($event)">hire me</a>

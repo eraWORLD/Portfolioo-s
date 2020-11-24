@@ -2,9 +2,13 @@
 @import "../../sass/btn";
 
 .about{
-  margin: 8.4rem 0;
-  @include screen('lg'){
+  margin:4.4rem 0;
+  @include screen('lg') {
     margin: 4rem 0;
+  }
+  @include screen('md') {
+    margin: 4rem 0;
+    padding-top: 1rem;
   }
 
   .about__inner{

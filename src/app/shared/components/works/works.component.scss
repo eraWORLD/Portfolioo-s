@@ -8,11 +8,13 @@
   font-family: 'Montserrat', sans-serif;
   margin: 2.8rem 0;
 
-  //@include screen('md'){
-  //  max-width: 370px;
-  //}
+  @include screen('md'){
+    padding-top: 6rem;
+  }
   @include screen('sm'){
     margin: 0 auto;
+    padding-top: 7rem;
+    padding-bottom: 2rem;
   }
   .container{
     .works__nav{
@@ -99,4 +101,9 @@
 
     }
   }
+}
+
+.btn {
+    margin-top: 2rem;
+
 }
